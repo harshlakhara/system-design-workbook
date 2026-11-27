@@ -114,7 +114,7 @@ Decide *how stale is acceptable per kind of data*, not globally. A tool's _avail
 Never say "add a cache" without also saying *what key, what expiry, how it is invalidated, and what happens when it is empty*. Interviewers reward candidates who raise the failure mode (stampede, cold start) before being asked.
 ]
 
-#checks-block((
+#checks-block(new-page: true, (
   [Compute average latency and database load for h = 0.95, `t_cache` = 2 ms, `t_db` = 40 ms, 5,000 rps.],
   [Why can a 99% hit ratio be _more dangerous_ than a 90% one?],
   [Give one case where write-back caching is a bad idea and one where it fits.],

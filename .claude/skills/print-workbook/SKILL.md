@@ -53,7 +53,7 @@ Use `templates/chapter.typ` as the skeleton. Order:
 7. Add the chapter's answers, rubric, and tear-out `cards` to the answer key; add its sources to the sources page.
 
 Also write once per book:
-- **A finished sample Round** (`00b-sample.typ`) in handwriting style with a "How to use this step" note under each step. It must follow an arc the learner can copy: the estimate/analysis says "keep it simple", the twist forces a change. Use `templates/sample-round.typ`.
+- **A finished sample Round** (`00b-sample.typ`) in italic "handwriting" style with a "How to use this step" note under each step. It must follow an arc the learner can copy: the estimate/analysis says "keep it simple", the twist forces a change. Use `templates/sample-round.typ`.
 - **Front matter** (how to use, depth markers, the five steps, running example, licence, printing and spiral-binding note).
 
 ## 5. Quality rules (non-negotiable)
@@ -76,7 +76,7 @@ Also write once per book:
 
 ## 7. Typst pitfalls learned the hard way
 
-See `reference/typst-pitfalls.md` before touching layout code. The big ones: never size fills with `here().position()` (oscillates) or `1fr` grid rows around `layout`; use `checks-block` and `fill-page`; use `sup()` not `#super`; list only installed fonts; add the `#import "../../lib.typ": *` line to every chapter file.
+See `reference/typst-pitfalls.md` before touching layout code. The big ones: never size fills with `here().position()` (oscillates) or `1fr` grid rows around `layout`; use `checks-block` and `fill-page`; use `sup()` not `#super`; use only bundled open fonts (`--ignore-system-fonts`); add the `#import "../../lib.typ": *` line to every chapter file.
 
 ## Files in this skill
 

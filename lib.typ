@@ -2,9 +2,12 @@
 // Text and figures: CC BY-SA 4.0. Build tooling and templates: MIT.
 // Design rules: black & white safe, ink-light, no all-blank pages, equal 20mm side margins (room to punch or staple).
 
-#let serif = ("Georgia", "Libertinus Serif")
-#let sans = ("Helvetica Neue", "Helvetica", "Arial")
-#let mono = ("Menlo", "DejaVu Sans Mono")
+// Fonts: only the open-licence fonts that Typst bundles (SIL OFL), so builds are identical on every machine and the PDF
+// embeds no proprietary fonts. The Makefile passes --ignore-system-fonts to enforce this.
+// If you add a font, it must be OFL/Apache/MIT licensed and shipped in a fonts/ folder (use --font-path fonts).
+#let serif = ("Libertinus Serif",)
+#let sans = ("Libertinus Serif",)   // headings and labels: bold serif, no open sans is bundled
+#let mono = ("DejaVu Sans Mono",)
 #let faint = luma(150)
 #let ico(kind, size: 2.7mm) = box(width: size, height: size, baseline: 0.12em, {
   if kind == "F" {
@@ -190,13 +193,13 @@
   self-score-label: "Self-score",
   self-score: ("Clarified first", "Used numbers", "Justified each box", "Named a failure", "Adapted to the twist"),
   minutes: ("3 min", "4 min", "8 min", "5 min", "5 min"),   // steps 1, 2, 3, 4, 5
-  sample-intro: [*This is a finished example.* The handwriting-style text is what a candidate would write on paper. The short notes marked "How to use this step" explain each part. Then do Round 1 yourself, with a pencil and a timer.],
+  sample-intro: [*This is a finished example.* The italic text is what a candidate would write on paper. The short notes marked "How to use this step" explain each part. Then do Round 1 yourself, with a pencil and a timer.],
   tip-label: "How to use this step.",
 )
 
-// Handwriting-style text used only in the sample Round (macOS fonts first, serif italic as a fallback).
-#let hand = ("Bradley Hand", "Noteworthy", "Marker Felt", "Libertinus Serif")
-#let hw(body, size: 10pt) = text(font: hand, size: size, fill: luma(45), body)
+// Handwriting-style text used only in the sample Round: italic bundled serif (no open handwriting font is bundled).
+#let hand = ("Libertinus Serif",)
+#let hw(body, size: 10pt) = text(font: hand, size: size * 1.08, style: "italic", fill: luma(45), body)
 
 #let round-head(num, title, mins, back: false) = block(width: 100%, stroke: (bottom: 1.4pt + black), inset: (bottom: 1.5mm), below: 2.5mm,
   grid(columns: (1fr, auto), column-gutter: 3mm, align: (left + bottom, right + bottom),

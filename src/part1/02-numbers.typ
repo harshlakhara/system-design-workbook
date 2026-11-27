@@ -143,7 +143,7 @@ Do these in the table below, with the arithmetic shown, before checking the answ
 Estimation is a *conversation*, not an arithmetic test. Say your assumptions aloud, round aggressively, and finish by saying what the number *means* ("so media storage dominates, not request rate"). If the interviewer gives numbers, use theirs. A wrong assumption stated clearly is easy to fix; a silent one is not.
 ]
 
-#checks-block((
+#checks-block(new-page: true, (
   [Why is "40 requests per second" a _design signal_ and not just a number?],
   [Which assumption in an estimate usually has the largest error: users, actions per user, payload size, or peak factor? Justify.],
   [Why do three 99.9% components in series not give 99.9%?],

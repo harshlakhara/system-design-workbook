@@ -2,7 +2,7 @@
 
 **Page.** A4, black and white (greys allowed), equal side margins `x: 20mm`, `top: 17mm`, `bottom: 19mm`, page number centred. Intended for duplex printing and spiral binding.
 
-**Type.** Body serif 11pt (`Georgia`, fallback `Libertinus Serif`), `leading: 0.78em`, `spacing: 1.05em`. Headings and labels sans (`Helvetica Neue`, `Helvetica`, `Arial`). Code `Menlo` 8.3pt. Tables 9.3pt. Callouts 10.6pt. Small labels use `lab[...]` (7.5pt bold, tracked, uppercase).
+**Type.** Body serif 11pt (`Libertinus Serif`, bundled, SIL OFL), `leading: 0.78em`, `spacing: 1.05em`. Headings and labels use the `sans` role, which is the same bundled serif in bold (no open sans is bundled). Code `DejaVu Sans Mono` 8.3pt. Builds use `--ignore-system-fonts`, so only open fonts are embedded. Tables 9.3pt. Callouts 10.6pt. Small labels use `lab[...]` (7.5pt bold, tracked, uppercase).
 
 **Depth markers.** ● Foundational, ◐ Mid-level, ◆ Senior+. Plain characters in the source; vector icons in the PDF. Rename or drop for other subjects, but keep three shapes that survive black and white.
 
@@ -15,7 +15,7 @@
 - Back: step 4 defend table (rows 16mm), step 5 twist box, a "redraw" canvas that fills the page, "new numbers" (30mm), "do differently" (15mm), self-score checkboxes.
 - Titles 40 characters or fewer. Works if printed alone.
 
-**Sample Round.** Same template with `sample: (...)` data: handwriting-style text (`hw()`), diagrams from `hflow`, and a note under each step.
+**Sample Round.** Same template with `sample: (...)` data: italic serif "handwriting" text (`hw()`), diagrams from `hflow`, and a note under each step.
 
 **Chapter rhythm.** Predict, concepts, worked example, "in the real test", checks-block, Round. Answers and cards in the answer key; sources on the sources page.
 

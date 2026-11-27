@@ -19,7 +19,7 @@
 )
 
 // A finished Round. Rules: 5 lines maximum in a 40mm clarify box; the analysis should say "keep it simple";
-// the twist should force one change. Do not use "~" (the handwriting font lacks it).
+// the twist should force one change. Sample text is italic bundled serif.
 #interview-round("Sample", "TODO short title",
   "TODO: a small, self-contained prompt.",
   est-rows: ("TODO row 1", "TODO row 2", "TODO row 3"),
