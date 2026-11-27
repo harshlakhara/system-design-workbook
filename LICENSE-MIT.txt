@@ -1,4 +1,4 @@
-MIT License (build tooling and Typst templates: lib.typ, main.typ, Makefile)
+MIT License (code and templates: lib.typ, main.typ, Makefile, .gitignore, CLAUDE.md, and everything under .claude/)
 
 Copyright (c) 2026 System Design Workbook contributors
 

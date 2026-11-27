@@ -20,7 +20,20 @@ command -v typst >/dev/null || echo "warning: typst not found (brew install typs
 
 mkdir -p "$TARGET/src/part1" "$TARGET/out"
 cp "$ROOT/lib.typ" "$TARGET/lib.typ"
-cp "$ROOT/LICENSE-MIT.txt" "$ROOT/LICENSE-CC-BY-SA.md" "$TARGET/" 2>/dev/null || true
+cp "$ROOT/LICENSE-MIT.txt" "$TARGET/LICENSE-MIT.txt"
+# CC BY-SA: keep the official legal code verbatim, replace this book's scope and attribution header with a generic one.
+{
+  printf '# Licence for text and figures: CC BY-SA 4.0\n\nThe written content and figures of this book (everything under `src/`, `README.md`, `SOURCES.md` and the built PDF)\nare licensed under **Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)**.\nSummary: https://creativecommons.org/licenses/by-sa/4.0/\n\nCode and templates (`lib.typ`, `main.typ`, `Makefile`, `CLAUDE.md`) are MIT: see `LICENSE-MIT.txt`.\nTODO: add a suggested attribution line (title, author, URL) here once the book is published.\nThird-party works cited keep their own licences (see `SOURCES.md`).\n\n---\n\n'
+  sed -n '/^The text below is the unmodified legal code/,$p' "$ROOT/LICENSE-CC-BY-SA.md"
+} > "$TARGET/LICENSE-CC-BY-SA.md"
+cat > "$TARGET/LICENSE" <<LIC
+This repository uses two licences, split by kind of file.
+
+1. Text and figures: CC BY-SA 4.0 (src/**, README.md, SOURCES.md, the built PDF). See LICENSE-CC-BY-SA.md
+2. Code and templates: MIT (lib.typ, main.typ, Makefile, CLAUDE.md). See LICENSE-MIT.txt
+
+Third-party works cited in the book keep their own licences (see SOURCES.md).
+LIC
 
 sub() { # sub <template> <dest>
   sed -e "s|__TITLE__|$TITLE|g" -e "s|__SUBJECT__|$SUBJECT|g" -e "s|__SLUG__|$SLUG|g" \

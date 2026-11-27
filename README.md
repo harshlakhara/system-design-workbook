@@ -7,7 +7,7 @@ A print-first, pen-and-paper workbook for **system design interview preparation*
 - Output: `out/system-design-workbook-part1.pdf` (A4, black and white, duplex friendly; spiral binding recommended so it lies flat)
 - Build: install [Typst](https://typst.app) (`brew install typst`), then `make`
 - Layout: `main.typ` (assembly), `lib.typ` (templates), `src/part1/*.typ` (chapters), `PHASE1-research-and-proposal.md` (research and plan)
-- Licences: text and figures CC BY-SA 4.0 (`LICENSE-CC-BY-SA.md`), tooling MIT (`LICENSE-MIT.txt`)
+- Licences: text and figures CC BY-SA 4.0 (`LICENSE-CC-BY-SA.md`), code and templates MIT (`LICENSE-MIT.txt`); see `LICENSE` for which files are which
 - Contributing: original content only. Cite public papers and blogs, record them in `SOURCES.md`, never paste from books or paid courses.
 
 Status: Part I drafted (foundations, six chapters, six Interview Rounds, answer key, retrieval cards).

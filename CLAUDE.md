@@ -4,7 +4,7 @@ Open-source, print-first workbook (PDF) for system design **interview prep**, wr
 
 ## Locked decisions (do not re-litigate)
 - Audience: interview prep first; usable from fresher to senior via depth markers.
-- Licence: **CC BY-SA 4.0** for text and figures, **MIT** for tooling and templates.
+- Licence: **CC BY-SA 4.0** for text and figures, **MIT** for tooling and templates. Files: `LICENSE` (which files are which), `LICENSE-CC-BY-SA.md` (scope, attribution, **verbatim** official legal code: never edit the legal text), `LICENSE-MIT.txt`. New content under `src/` is CC BY-SA; new code or templates are MIT; update the scope lists in `LICENSE` and both licence files if a new kind of file is added.
 - Toolchain: **Typst** (0.15.1). Build with `make` → `out/system-design-workbook-part1.pdf`. Entry `main.typ`, template `lib.typ`, content in `src/part1/*.typ`.
 - **No blank worksheet pages.** Writing space comes only from compact **Interview Round** templates (interviewer asks, candidate writes), plus predict lines, check lines and drill tables.
 - Content is original. Public papers and engineering blogs may be cited and their facts re-expressed in our words; never paste text. Record every source in `SOURCES.md` with its licence, and list per-chapter sources in `src/part1/08-sources.typ`.

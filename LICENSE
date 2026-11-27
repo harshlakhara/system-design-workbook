@@ -1,0 +1,15 @@
+This repository uses two licences, split by kind of file.
+
+1. Text and figures: Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+   Applies to: src/**, README.md, PHASE1-research-and-proposal.md, SOURCES.md, and the PDF built from them.
+   Full text and attribution guidance: LICENSE-CC-BY-SA.md
+
+2. Code and templates: MIT License
+   Applies to: lib.typ, main.typ, Makefile, .gitignore, CLAUDE.md, and everything under .claude/
+   (the print-workbook skill, its scripts, templates and reference notes).
+   Full text: LICENSE-MIT.txt
+
+A book you create from the templates is yours: the MIT licence lets you license your own text however you like.
+It does not give you rights to the text in src/ of this book, which stays under CC BY-SA 4.0.
+
+Third-party works cited in the book keep their own licences (see SOURCES.md).
