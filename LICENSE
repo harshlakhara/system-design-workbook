@@ -13,3 +13,6 @@ A book you create from the templates is yours: the MIT licence lets you license 
 It does not give you rights to the text in src/ of this book, which stays under CC BY-SA 4.0.
 
 Third-party works cited in the book keep their own licences (see SOURCES.md).
+
+3. Fonts: the files in fonts/ (Source Serif 4, Source Sans 3, Caveat) are third-party fonts under the SIL Open Font License 1.1.
+   Each family's licence is in fonts/OFL-*.txt. They are not covered by CC BY-SA or MIT.

@@ -5,7 +5,7 @@ A print-first, pen-and-paper workbook for **system design interview preparation*
 (clarify, estimate, sketch, defend, handle the twist). There are no blank filler pages.
 
 - Output: `out/system-design-workbook-part1.pdf` (A4, black and white, duplex friendly; spiral binding recommended so it lies flat)
-- Build: install [Typst](https://typst.app) (`brew install typst`), then `make`. The build uses only Typst's bundled open fonts (Libertinus Serif, DejaVu Sans Mono; SIL OFL), so the PDF is identical on every machine and embeds no proprietary fonts
+- Build: install [Typst](https://typst.app) (`brew install typst`), then `make`. The build uses only open fonts (Source Serif 4, Source Sans 3 and Caveat from Google Fonts in `fonts/`, DejaVu Sans Mono bundled with Typst; all SIL OFL), so the PDF is identical on every machine and embeds no proprietary fonts
 - Layout: `main.typ` (assembly), `lib.typ` (templates), `src/part1/*.typ` (chapters), `PHASE1-research-and-proposal.md` (research and plan)
 - Licences: text and figures CC BY-SA 4.0 (`LICENSE-CC-BY-SA.md`), code and templates MIT (`LICENSE-MIT.txt`); see `LICENSE` for which files are which
 - Contributing: original content only. Cite public papers and blogs, record them in `SOURCES.md`, never paste from books or paid courses.

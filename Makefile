@@ -5,10 +5,10 @@ all: $(PDF)
 
 $(PDF): main.typ lib.typ $(wildcard src/*/*.typ)
 	@mkdir -p out
-	typst compile --ignore-system-fonts main.typ $(PDF)
+	typst compile --font-path fonts --ignore-system-fonts main.typ $(PDF)
 
 watch:
-	typst watch --ignore-system-fonts main.typ $(PDF)
+	typst watch --font-path fonts --ignore-system-fonts main.typ $(PDF)
 
 clean:
 	rm -f $(PDF)

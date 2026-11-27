@@ -76,7 +76,7 @@ Also write once per book:
 
 ## 7. Typst pitfalls learned the hard way
 
-See `reference/typst-pitfalls.md` before touching layout code. The big ones: never size fills with `here().position()` (oscillates) or `1fr` grid rows around `layout`; use `checks-block` and `fill-page`; use `sup()` not `#super`; use only bundled open fonts (`--ignore-system-fonts`); add the `#import "../../lib.typ": *` line to every chapter file.
+See `reference/typst-pitfalls.md` before touching layout code. The big ones: never size fills with `here().position()` (oscillates) or `1fr` grid rows around `layout`; use `checks-block` and `fill-page`; use `sup()` not `#super`; use only the open fonts in `fonts/` (`--font-path fonts --ignore-system-fonts`); add the `#import "../../lib.typ": *` line to every chapter file.
 
 ## Files in this skill
 

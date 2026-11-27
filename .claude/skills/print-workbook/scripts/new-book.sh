@@ -20,6 +20,7 @@ command -v typst >/dev/null || echo "warning: typst not found (brew install typs
 
 mkdir -p "$TARGET/src/part1" "$TARGET/out"
 cp "$ROOT/lib.typ" "$TARGET/lib.typ"
+cp -R "$ROOT/fonts" "$TARGET/fonts"
 cp "$ROOT/LICENSE-MIT.txt" "$TARGET/LICENSE-MIT.txt"
 # CC BY-SA: keep the official legal code verbatim, replace this book's scope and attribution header with a generic one.
 {
@@ -56,10 +57,10 @@ all: \$(PDF)
 
 \$(PDF): main.typ lib.typ \$(wildcard src/*/*.typ)
 	@mkdir -p out
-	typst compile --ignore-system-fonts main.typ \$(PDF)
+	typst compile --font-path fonts --ignore-system-fonts main.typ \$(PDF)
 
 watch:
-	typst watch --ignore-system-fonts main.typ \$(PDF)
+	typst watch --font-path fonts --ignore-system-fonts main.typ \$(PDF)
 
 clean:
 	rm -f \$(PDF)

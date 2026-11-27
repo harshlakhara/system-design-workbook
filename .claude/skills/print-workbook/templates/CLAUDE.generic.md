@@ -12,7 +12,7 @@ Print-first, pen-and-paper workbook (Typst PDF) for __SUBJECT__. Built from the 
 - A4, black and white, equal side margins (`x: 20mm`), spiral-binding friendly. Never use `inside`/`outside` margins or `pagebreak(to: ..)`.
 - Wording lives in `round-text` and `callout-text` at the top of `lib.typ`; layout code has no user-facing literals.
 - Check-yourself sections use `#checks-block((...))`; Round canvases use `fill-page`. Never size content with `here().position()`.
-- Typography: body serif 11pt, headings sans, tables 9.3pt, callouts 10.6pt. Use `sup()` for superscripts. Use only the bundled open fonts (Libertinus Serif, DejaVu Sans Mono); the Makefile passes `--ignore-system-fonts`. Any added font must be OFL/Apache/MIT and shipped in `fonts/`.
+- Typography: body serif 11pt, headings sans, tables 9.3pt, callouts 10.6pt. Use `sup()` for superscripts. Fonts are SIL OFL files in `fonts/` (Source Serif 4, Source Sans 3, Caveat) plus bundled DejaVu Sans Mono; the Makefile passes `--font-path fonts --ignore-system-fonts`. Any added font must be OFL/Apache/MIT with its licence file in `fonts/`; re-render every page after changing fonts.
 - Round titles 40 characters or fewer. When space is tight shrink text boxes and rows, never drawing canvases.
 
 ## Chapter rhythm

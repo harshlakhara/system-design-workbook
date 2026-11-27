@@ -17,14 +17,14 @@ Open-source, print-first workbook (PDF) for system design **interview prep**, wr
 - Everything must survive black-and-white printing: use shapes, bold, borders and tints of grey, never colour to carry meaning.
 
 ## Typography (set in `workbook()`; do not override ad hoc in chapters)
-- **Fonts: open-licence bundled fonts only.** Body and headings use `Libertinus Serif` (headings bold; no open sans is bundled), code uses `DejaVu Sans Mono`; both ship inside Typst (SIL OFL). `make` passes `--ignore-system-fonts`, so nothing proprietary (Georgia, Helvetica, Apple fonts) can be embedded in the PDF. To add a font it must be OFL/Apache/MIT licensed and shipped in a `fonts/` folder (`--font-path fonts`).
+- **Fonts: open-licence (SIL OFL) only.** Body `Source Serif 4`, headings/labels/tables `Source Sans 3`, sample "handwriting" `Caveat` (all Google Fonts, variable TTFs in `fonts/` with their `OFL-*.txt` licences), code `DejaVu Sans Mono` (bundled in Typst). `make` passes `--font-path fonts --ignore-system-fonts`, so nothing proprietary can be embedded and builds are identical everywhere. Adding a font: it must be OFL/Apache/MIT, its licence file goes in `fonts/`, and re-render every page afterwards (metrics change page breaks).
 - Body: serif, **11pt**, `par(leading: 0.78em, spacing: 1.05em)`; list/enum spacing 0.75em.
-- Headings and labels: the `sans` role (currently the same bundled serif, bold). h1 via `h1-style`, h2 14pt bold, h3 11.5pt bold, both sticky.
+- Headings and labels: the `sans` role (Source Sans 3). h1 via `h1-style`, h2 14pt bold, h3 11.5pt bold, both sticky.
 - Code: `mono` role at 8.3pt.
 - Tables: sans 9.3pt, inset `(x: 2mm, y: 1.7mm)`. Callout text 10.6pt (sources callouts 9pt).
 - Small caps-style labels use `lab[...]` (7.5pt bold, tracked, uppercase).
 - Superscripts use `sup(x)`, never `#super` (the system font renders it as dots).
-- Do not reference fonts that are not bundled; builds run with `--ignore-system-fonts`.
+- Do not reference fonts that are not in `fonts/` or bundled with Typst; builds run with `--ignore-system-fonts`.
 
 ## Depth markers
 - ● Foundational, ◐ Mid-level, ◆ Senior+. Type the plain characters; `workbook()` replaces them with vector icons via `ico("F"|"M"|"S")`. Never swap in emoji or font glyph helpers.
@@ -35,7 +35,7 @@ Open-source, print-first workbook (PDF) for system design **interview prep**, wr
 2. Concept sections with one idea each; depth tiers as `callout("mid")` and `callout("deepen")`.
 3. Worked example on PorchLend (`callout("worked")`).
 4. `callout("interview")`: what interviewers probe and how to answer.
-5. `#checks-block((` `[q1]`, `[q2]`, ... `))`: the Check-yourself section. It is an unbreakable `1fr` block, so it **always stretches to the bottom margin** of its page and spare height is shared among the answer lines (7mm minimum gap each). Never give it a fixed height, never read `here().position()` for it (it oscillates between pages), never fall back to `callout("checks")`. If the questions do not fit in the space left, pass `new-page: true`.
+5. `#checks-block((` `[q1]`, `[q2]`, ... `))`: the Check-yourself section. It is an unbreakable `1fr` block, so it **always stretches to the bottom margin** of its page and spare height is shared among the answer lines (7mm minimum gap each). Never give it a fixed height, never read `here().position()` for it (it oscillates between pages), never fall back to `callout("checks")`. If the questions do not fit in the space left, pass `new-page: true` (currently needed in Chapters 2, 3 and 5; after any font or text change, re-render and check every chapter).
 6. `#interview-round(...)`: two sheets (front and back).
 7. Answers and rubric go into `src/part1/07-answers.typ`; add retrieval `cards` for new key facts. Sources go into `08-sources.typ`, not into per-chapter callouts.
 - Every chapter file starts with `#import "../../lib.typ": *`. Chapter 1 opens with `#pagebreak(weak: true)` and `#part-band[...]` under the local `h1-style` override.
@@ -48,7 +48,7 @@ Open-source, print-first workbook (PDF) for system design **interview prep**, wr
 - Canvases are sized with `fill-page(top, fill, bottom:)`, which uses `layout` + `measure` with `slack: 10mm` (8mm spills; do not lower it). **Never** size a fill with `here().position()` (it converges to a wrong page) or `1fr` grid rows. After touching it, render pages and confirm every front and back fits exactly one page with nothing spilling.
 - Round titles must be short (about 40 characters or fewer) so the header, a two-column grid with Name/Date pinned right, stays on one line. Check every front and back header after adding a Round.
 - A Round must work if printed alone.
-- **Sample Round** (`src/part1/00b-sample.typ`, right after the contents): a finished Round for a small PorchLend problem (view counter) written in italic serif (`hw()`, bundled fonts only) with a "How to use this step" note under each step. It is rendered by `interview-round(..., sample: (...))`, so it always matches the real template. It teaches the arc: the estimate says "keep it simple", the twist forces a change. Keep its numbers consistent (60 views/s peak, 20,000/s twist). A filled box holds at most 5 lines in 40mm; check nothing overflows.
+- **Sample Round** (`src/part1/00b-sample.typ`, right after the contents): a finished Round for a small PorchLend problem (view counter) written in Caveat (`hw()`); sample boxes use `fbox` with leading 13.3pt and top inset 4.2mm so text sits on the 7.6mm rules with a "How to use this step" note under each step. It is rendered by `interview-round(..., sample: (...))`, so it always matches the real template. It teaches the arc: the estimate says "keep it simple", the twist forces a change. Keep its numbers consistent (60 views/s peak, 20,000/s twist). A filled box holds at most 5 lines in 40mm; check nothing overflows.
 
 ## Space for drawing
 - Wherever the text asks the reader to draw, there must be generous dotted space on the page: the Round's Sketch canvas (front) and "Redraw only what changes" canvas (back) take every spare millimetre, and any in-chapter "Draw it" prompt is a `callout("yourturn")` with a `dotbox(55mm or more)`. When trading space, shrink text boxes and table rows first, never drawing canvases.

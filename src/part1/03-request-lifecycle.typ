@@ -111,7 +111,7 @@ Draw the request path left to right and put a latency or rate on each hop. "What
 #dotbox(62mm)
 ]
 
-#checks-block((
+#checks-block(new-page: true, (
   [Why can a CDN make a _dynamic_ API faster even if it caches nothing?],
   [What goes wrong if a deep health check queries the database and the database slows down?],
   [Why must app servers be stateless to scale by adding machines? What would you do about a shopping cart?],

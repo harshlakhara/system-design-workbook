@@ -28,7 +28,7 @@ If you adapt the book, you must say you changed it, keep this notice, and share 
   licences (see `SOURCES.md`); we use their ideas and facts in our own words and link to the originals. Their text,
   figures and trademarks are not relicensed here.
 - **Fictional content.** PorchLend and its numbers are invented for teaching, and are licensed with the rest of the text.
-- **Fonts.** A PDF may embed subsets of the fonts available when it was built. Those fonts keep their own licences.
+- **Fonts.** The PDF embeds subsets of Source Serif 4, Source Sans 3, Caveat and DejaVu Sans Mono, all under the SIL Open Font License (licences in `fonts/`). They keep their own licences.
 
 This notice is a convenience, not legal advice. The legal code below is the official text and controls.
 

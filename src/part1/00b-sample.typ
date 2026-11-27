@@ -2,7 +2,7 @@
 
 // ---------- a hand-drawn-style flow: boxes with a reason underneath, arrows with a number on top ----------
 #let arrow(label) = stack(dir: ttb, spacing: 0.8mm,
-  align(center, hw(label, size: 8pt)),
+  align(center, hw(label, size: 6.6pt)),
   grid(columns: (1fr, auto), align: horizon,
     line(length: 100%, stroke: 1.1pt + luma(45)),
     polygon(fill: luma(45), stroke: none, (0pt, -1.3mm), (2.2mm, 0pt), (0pt, 1.3mm)),

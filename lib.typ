@@ -1,12 +1,12 @@
 // System Design Workbook: shared template library.
-// Text and figures: CC BY-SA 4.0. Build tooling and templates: MIT.
+// Text and figures: CC BY-SA 4.0. Build tooling and templates: MIT. Fonts in fonts/: SIL OFL 1.1.
 // Design rules: black & white safe, ink-light, no all-blank pages, equal 20mm side margins (room to punch or staple).
 
-// Fonts: only the open-licence fonts that Typst bundles (SIL OFL), so builds are identical on every machine and the PDF
-// embeds no proprietary fonts. The Makefile passes --ignore-system-fonts to enforce this.
-// If you add a font, it must be OFL/Apache/MIT licensed and shipped in a fonts/ folder (use --font-path fonts).
-#let serif = ("Libertinus Serif",)
-#let sans = ("Libertinus Serif",)   // headings and labels: bold serif, no open sans is bundled
+// Fonts: open-licence (SIL OFL) fonts only, shipped in fonts/ (Google Fonts) plus DejaVu Sans Mono bundled with Typst.
+// The Makefile passes --font-path fonts --ignore-system-fonts, so builds are identical on every machine and the PDF
+// embeds no proprietary fonts. A font added here must be OFL/Apache/MIT licensed, with its licence file in fonts/.
+#let serif = ("Source Serif 4",)
+#let sans = ("Source Sans 3",)
 #let mono = ("DejaVu Sans Mono",)
 #let faint = luma(150)
 #let ico(kind, size: 2.7mm) = box(width: size, height: size, baseline: 0.12em, {
@@ -197,9 +197,9 @@
   tip-label: "How to use this step.",
 )
 
-// Handwriting-style text used only in the sample Round: italic bundled serif (no open handwriting font is bundled).
-#let hand = ("Libertinus Serif",)
-#let hw(body, size: 10pt) = text(font: hand, size: size * 1.08, style: "italic", fill: luma(45), body)
+// Handwriting-style text used only in the sample Round (Caveat, SIL OFL, shipped in fonts/).
+#let hand = ("Caveat",)
+#let hw(body, size: 10pt) = text(font: hand, size: size * 1.3, fill: luma(45), body)
 
 #let round-head(num, title, mins, back: false) = block(width: 100%, stroke: (bottom: 1.4pt + black), inset: (bottom: 1.5mm), below: 2.5mm,
   grid(columns: (1fr, auto), column-gutter: 3mm, align: (left + bottom, right + bottom),
@@ -245,8 +245,8 @@
   let rh = if no-sketch { 15mm } else { 8.5mm }
   let smp = sample != none
   // filled ruled box (sample only)
-  let fbox(h, body) = rect(width: 100%, height: h, stroke: 0.7pt + black, fill: ruled-fill, inset: (x: 2mm, top: 1.9mm), {
-    set par(leading: 16.3pt, spacing: 16.3pt)
+  let fbox(h, body) = rect(width: 100%, height: h, stroke: 0.7pt + black, fill: ruled-fill, inset: (x: 2mm, top: 4.2mm), {
+    set par(leading: 13.3pt, spacing: 13.3pt)
     hw(body)
   })
   let tip(n) = if smp {
@@ -325,7 +325,7 @@
     v(1.5mm)
     lab(round-text.new-nums-label)
     v(0.8mm)
-    if smp { fbox(30mm, sample.new-nums) } else { writebox(30mm) }
+    if smp { fbox(34mm, sample.new-nums) } else { writebox(30mm) }
     v(1.5mm)
     lab(round-text.differently-label)
     v(0.8mm)

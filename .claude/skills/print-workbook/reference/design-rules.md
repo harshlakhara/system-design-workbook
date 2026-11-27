@@ -2,7 +2,7 @@
 
 **Page.** A4, black and white (greys allowed), equal side margins `x: 20mm`, `top: 17mm`, `bottom: 19mm`, page number centred. Intended for duplex printing and spiral binding.
 
-**Type.** Body serif 11pt (`Libertinus Serif`, bundled, SIL OFL), `leading: 0.78em`, `spacing: 1.05em`. Headings and labels use the `sans` role, which is the same bundled serif in bold (no open sans is bundled). Code `DejaVu Sans Mono` 8.3pt. Builds use `--ignore-system-fonts`, so only open fonts are embedded. Tables 9.3pt. Callouts 10.6pt. Small labels use `lab[...]` (7.5pt bold, tracked, uppercase).
+**Type.** Body `Source Serif 4` 11pt, `leading: 0.78em`, `spacing: 1.05em`. Headings, labels and tables `Source Sans 3`. Sample handwriting `Caveat`. Code `DejaVu Sans Mono` 8.3pt, tables 9.3pt, callouts 10.6pt. Small labels use `lab[...]` (7.5pt bold, tracked, uppercase). Fonts are SIL OFL files in `fonts/` (Google Fonts) and the build passes `--font-path fonts --ignore-system-fonts`.
 
 **Depth markers.** ● Foundational, ◐ Mid-level, ◆ Senior+. Plain characters in the source; vector icons in the PDF. Rename or drop for other subjects, but keep three shapes that survive black and white.
 
